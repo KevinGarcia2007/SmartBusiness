@@ -1,0 +1,422 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f7fb;
+  color: #1f2937;
+  line-height: 1.5;
+}
+
+/* ===============================
+   HEADER
+=============================== */
+
+header {
+  background: #111827;
+  color: white;
+  padding: 28px 8%;
+}
+
+header h1 {
+  font-size: 30px;
+}
+
+header p {
+  margin-top: 5px;
+  color: #cbd5e1;
+}
+
+/* ===============================
+   CONTENIDO GENERAL
+=============================== */
+
+main {
+  width: 84%;
+  margin: 30px auto;
+}
+
+.card {
+  background: white;
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 25px;
+
+  box-shadow:
+    0 4px 15px
+    rgba(0, 0, 0, 0.06);
+}
+
+.card h2 {
+  margin-bottom: 20px;
+}
+
+/* ===============================
+   FORMULARIO
+=============================== */
+
+.form-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 18px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 7px;
+  font-weight: bold;
+}
+
+input,
+select {
+  width: 100%;
+
+  padding: 11px;
+
+  border:
+    1px solid #d1d5db;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+
+  background: white;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(37, 99, 235, 0.1);
+}
+
+/* ===============================
+   BOTONES
+=============================== */
+
+button {
+  background: #2563eb;
+  color: white;
+
+  border: none;
+
+  padding:
+    12px 18px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-weight: bold;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+button:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.btn-principal {
+  margin-top: 20px;
+}
+
+/* ===============================
+   KPIs
+=============================== */
+
+.kpis {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 18px;
+
+  margin-bottom: 25px;
+}
+
+.kpi {
+  background: white;
+
+  border-radius: 14px;
+
+  padding: 22px;
+
+  box-shadow:
+    0 4px 15px
+    rgba(0, 0, 0, 0.06);
+}
+
+.kpi span {
+  display: block;
+
+  color: #6b7280;
+
+  font-size: 14px;
+}
+
+.kpi strong {
+  display: block;
+
+  font-size: 25px;
+
+  margin-top: 8px;
+
+  color: #111827;
+}
+
+/* ===============================
+   DASHBOARD
+=============================== */
+
+.dashboard-grid {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 25px;
+}
+
+.grafica-card {
+  min-height: 400px;
+}
+
+canvas {
+  max-height: 320px;
+}
+
+/* ===============================
+   TABLA
+=============================== */
+
+.titulo-tabla {
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    center;
+
+  margin-bottom: 15px;
+}
+
+.titulo-tabla h2 {
+  margin-bottom: 0;
+}
+
+.tabla-contenedor {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+
+  border-collapse:
+    collapse;
+}
+
+th,
+td {
+  text-align: left;
+
+  padding: 13px;
+
+  border-bottom:
+    1px solid #e5e7eb;
+}
+
+th {
+  background: #f9fafb;
+
+  color: #374151;
+
+  font-size: 14px;
+}
+
+td {
+  font-size: 14px;
+}
+
+tbody tr:hover {
+  background: #f9fafb;
+}
+
+/* ===============================
+   ANÁLISIS IA
+=============================== */
+
+.analisis-header {
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    center;
+
+  gap: 30px;
+}
+
+.analisis-header h2 {
+  margin-bottom: 8px;
+}
+
+.analisis-header p {
+  color: #6b7280;
+}
+
+#resultadoIA {
+  margin-top: 20px;
+
+  background: #f8fafc;
+
+  border-left:
+    4px solid #2563eb;
+
+  padding: 24px;
+
+  border-radius:
+    0 10px 10px 0;
+
+  line-height: 1.7;
+}
+
+/* Títulos generados por Markdown */
+
+#resultadoIA h1,
+#resultadoIA h2,
+#resultadoIA h3 {
+  color: #111827;
+
+  margin-top: 22px;
+
+  margin-bottom: 12px;
+}
+
+#resultadoIA h1:first-child,
+#resultadoIA h2:first-child,
+#resultadoIA h3:first-child {
+  margin-top: 0;
+}
+
+#resultadoIA h2 {
+  font-size: 20px;
+
+  border-bottom:
+    1px solid #e5e7eb;
+
+  padding-bottom: 7px;
+}
+
+/* Párrafos */
+
+#resultadoIA p {
+  margin-bottom: 14px;
+}
+
+/* Listas */
+
+#resultadoIA ul,
+#resultadoIA ol {
+  margin-left: 26px;
+
+  margin-bottom: 16px;
+}
+
+#resultadoIA li {
+  margin-bottom: 9px;
+}
+
+/* Negritas */
+
+#resultadoIA strong {
+  font-weight: 700;
+
+  color: #111827;
+}
+
+/* Código por si la IA devuelve alguno */
+
+#resultadoIA code {
+  background: #e5e7eb;
+
+  padding:
+    2px 6px;
+
+  border-radius: 4px;
+}
+
+/* ===============================
+   RESPONSIVE
+=============================== */
+
+@media (max-width: 1000px) {
+
+  .kpis {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 850px) {
+
+  .form-grid,
+  .dashboard-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+  main {
+    width: 94%;
+  }
+
+  .analisis-header,
+  .titulo-tabla {
+    display: block;
+  }
+
+  .analisis-header button,
+  .titulo-tabla button {
+    margin-top: 15px;
+  }
+
+}
+
+@media (max-width: 550px) {
+
+  .kpis {
+    grid-template-columns:
+      1fr;
+  }
+
+  header {
+    padding:
+      22px 5%;
+  }
+
+  header h1 {
+    font-size: 25px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+}

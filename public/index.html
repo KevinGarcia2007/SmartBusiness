@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>SmartBusiness</title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/chart.js"
+  ></script>
+
+</head>
+
+<body>
+
+  <header>
+
+    <div>
+
+      <h1>SmartBusiness</h1>
+
+      <p>
+        Dashboard inteligente de ventas empresariales
+      </p>
+
+    </div>
+
+  </header>
+
+
+  <main>
+
+
+    <!-- REGISTRO DE VENTAS -->
+
+    <section class="card">
+
+      <h2>Registrar venta</h2>
+
+      <form id="formVenta">
+
+        <div class="form-grid">
+
+          <div>
+
+            <label for="producto">
+              Producto
+            </label>
+
+            <input
+              type="text"
+              id="producto"
+              placeholder="Ej: Café Premium"
+              required
+            >
+
+          </div>
+
+
+          <div>
+
+            <label for="categoria">
+              Categoría
+            </label>
+
+            <select
+              id="categoria"
+              required
+            >
+
+              <option value="">
+                Seleccionar
+              </option>
+
+              <option>
+                Bebidas
+              </option>
+
+              <option>
+                Alimentos
+              </option>
+
+              <option>
+                Tecnología
+              </option>
+
+              <option>
+                Hogar
+              </option>
+
+              <option>
+                Otros
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div>
+
+            <label for="ciudad">
+              Ciudad
+            </label>
+
+            <select
+              id="ciudad"
+              required
+            >
+
+              <option value="">
+                Seleccionar
+              </option>
+
+              <option>
+                Bogotá
+              </option>
+
+              <option>
+                Medellín
+              </option>
+
+              <option>
+                Cali
+              </option>
+
+              <option>
+                Barranquilla
+              </option>
+
+              <option>
+                Cartagena
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <div>
+
+            <label for="cantidad">
+              Cantidad
+            </label>
+
+            <input
+              type="number"
+              id="cantidad"
+              min="1"
+              required
+            >
+
+          </div>
+
+
+          <div>
+
+            <label for="precio">
+              Precio unitario
+            </label>
+
+            <input
+              type="number"
+              id="precio"
+              min="0"
+              required
+            >
+
+          </div>
+
+
+          <div>
+
+            <label for="costo">
+              Costo unitario
+            </label>
+
+            <input
+              type="number"
+              id="costo"
+              min="0"
+              required
+            >
+
+          </div>
+
+        </div>
+
+        <button
+          type="submit"
+          class="btn-principal"
+        >
+          Registrar venta
+        </button>
+
+      </form>
+
+    </section>
+
+
+    <!-- INDICADORES -->
+
+    <section class="kpis">
+
+      <div class="kpi">
+
+        <span>
+          Ventas totales
+        </span>
+
+        <strong id="ventasTotales">
+          $0
+        </strong>
+
+      </div>
+
+
+      <div class="kpi">
+
+        <span>
+          Utilidad total
+        </span>
+
+        <strong id="utilidadTotal">
+          $0
+        </strong>
+
+      </div>
+
+
+      <div class="kpi">
+
+        <span>
+          Unidades vendidas
+        </span>
+
+        <strong id="unidadesTotales">
+          0
+        </strong>
+
+      </div>
+
+
+      <div class="kpi">
+
+        <span>
+          Registros
+        </span>
+
+        <strong id="totalRegistros">
+          0
+        </strong>
+
+      </div>
+
+    </section>
+
+
+    <!-- DASHBOARD -->
+
+    <section class="dashboard-grid">
+
+
+      <div class="card grafica-card">
+
+        <h2>
+          Ventas por producto
+        </h2>
+
+        <canvas
+          id="graficaProductos"
+        ></canvas>
+
+      </div>
+
+
+      <div class="card grafica-card">
+
+        <h2>
+          Ventas por ciudad
+        </h2>
+
+        <canvas
+          id="graficaCiudades"
+        ></canvas>
+
+      </div>
+
+
+      <div class="card grafica-card">
+
+        <h2>
+          Ventas por categoría
+        </h2>
+
+        <canvas
+          id="graficaCategorias"
+        ></canvas>
+
+      </div>
+
+
+      <div class="card grafica-card">
+
+        <h2>
+          Utilidad por producto
+        </h2>
+
+        <canvas
+          id="graficaUtilidades"
+        ></canvas>
+
+      </div>
+
+
+      <div class="card grafica-card">
+
+        <h2>
+          Unidades vendidas por producto
+        </h2>
+
+        <canvas
+          id="graficaUnidades"
+        ></canvas>
+
+      </div>
+
+
+      <div class="card grafica-card">
+
+        <h2>
+          Utilidad por ciudad
+        </h2>
+
+        <canvas
+          id="graficaUtilidadCiudad"
+        ></canvas>
+
+      </div>
+
+    </section>
+
+
+    <!-- TABLA -->
+
+    <section class="card">
+
+      <div class="titulo-tabla">
+
+        <h2>
+          Ventas registradas
+        </h2>
+
+
+        <button
+          id="btnEjemplo"
+          type="button"
+        >
+          Generar datos de prueba
+        </button>
+
+      </div>
+
+
+      <div class="tabla-contenedor">
+
+        <table>
+
+          <thead>
+
+            <tr>
+
+              <th>
+                Producto
+              </th>
+
+              <th>
+                Categoría
+              </th>
+
+              <th>
+                Ciudad
+              </th>
+
+              <th>
+                Cantidad
+              </th>
+
+              <th>
+                Ventas
+              </th>
+
+              <th>
+                Utilidad
+              </th>
+
+            </tr>
+
+          </thead>
+
+
+          <tbody id="tablaVentas">
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+
+    <!-- IA -->
+
+    <section class="card analisis">
+
+      <div class="analisis-header">
+
+        <div>
+
+          <h2>
+            🤖 Análisis inteligente
+          </h2>
+
+          <p>
+            La inteligencia artificial analiza los datos registrados
+            y genera recomendaciones para apoyar la toma de decisiones.
+          </p>
+
+        </div>
+
+
+        <button
+          id="btnAnalizar"
+          type="button"
+        >
+          Generar análisis con IA
+        </button>
+
+      </div>
+
+
+      <div id="resultadoIA">
+
+        Registra ventas para comenzar el análisis.
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- MARKDOWN -->
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"
+  ></script>
+
+
+  <!-- APLICACIÓN -->
+
+  <script
+    src="app.js"
+  ></script>
+
+
+</body>
+
+</html>
